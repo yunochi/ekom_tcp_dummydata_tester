@@ -80,8 +80,9 @@ if __name__ == '__main__':
                                                                           outside_humidity, ventilation_temperature,
                                                                           ventilation_humidity, co2_value,
                                                                           filter_differential_pressure)
-        print('DEBUG: tx_str:{}'.format(tx_str))
+
         tx_byte = tx_str.encode(encoding='utf-8', errors='ignore')
+        print('DEBUG: tx_byte:{}'.format(tx_byte))
         if not send_data_tcp_sock(tx_byte):
             # TCP socket send error
             print('TCP send error, try init tcp socket')
